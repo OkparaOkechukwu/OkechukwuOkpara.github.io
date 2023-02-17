@@ -1,1 +1,889 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300&display=swap");
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  position: relative;
+}
+section {
+  width: 100%;
+  min-height: 100vh;
+}
+.scroll-top {
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+  background-color: crimson;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 2;
+  transition: all 0.3s;
+}
+.scroll-btn {
+  color: white;
+  font-size: 20px;
+}
+#bar, #closebtn{
+  display: none;
+  
+}
+
+.header-container {
+  position: relative;
+
+  width: 100%;
+
+  z-index: 4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.3s;
+}
+.header-container.sticky {
+  background-color: crimson;
+}
+.header-container.sticky header {
+  padding: 20px 0;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.list {
+  display: flex;
+}
+.list-items {
+  list-style: none;
+}
+
+.list-items a {
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  margin-right: 10px;
+  text-decoration: none;
+}
+.header-container.sticky .list-items a:hover {
+  color: black;
+}
+.list-items a:hover {
+  color: crimson;
+}
+.header-container.sticky .left h1 span {
+  color: black;
+}
+.left h1 span {
+  color: crimson;
+  transition: 0.3s;
+}
+.left h1 {
+  font-size: 35px;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  color: white;
+}
+
+/* media query for header */
+@media (max-width: 768px) {
+  .left h1 {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: "Lato", sans-serif;
+    color: white;
+  }
+  .container {
+    width: 90%;
+  }
+  header {
+    width: 100%;
+  }
+  header .right {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    z-index: 99999999999999999999999999999999;
+    transition: .3s linear;
+  }
+header .right.show {
+  left: 0;
+}
+
+  .right .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+  }
+  .list-items {
+    margin-bottom: 0.7rem;
+    
+  }
+  #bar{
+    display: flex;
+    position: absolute;
+    right: 2rem;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+ #closebtn{
+     position: absolute;
+    right: 2rem;
+    top: 2rem;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+  }
+  .header-container.sticky .list-items a:hover {
+  color: crimson;
+}
+  
+
+}
+
+.banner {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../images/banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  display: flex;
+  align-items: center;
+}
+.info {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+.name {
+  font-size: 30px;
+  font-family: "Lato", sans-serif;
+}
+.name-2 {
+  font-size: 80px;
+  font-weight: 900;
+}
+.work {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.work span {
+  color: crimson;
+}
+.info button {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+.info button a {
+  padding-top: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  font-size: 28px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  color: white;
+  background-color: crimson;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.info button a:hover {
+  background: transparent;
+  border: 2px solid crimson;
+}
+.info-con {
+  margin-bottom: 30px;
+}
+
+/* media query for banner */
+@media (max-width: 768px) {
+  .name {
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+  }
+  .name-2 {
+    font-size: 35px;
+    font-weight: 900;
+  }
+  .work {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  .info button a {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    font-size: 18px;
+  }
+  .logo{
+    padding-left: 1.5rem;
+  }
+}
+
+.container {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.img-conn {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.semi-container {
+  flex-basis: 40%;
+  max-width: 45%;
+}
+.detail {
+  flex-basis: 50%;
+}
+#about {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.heading {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  font-size: 40px;
+  font-weight: 700;
+  font-family: monospace;
+}
+
+.heading::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 3px;
+  width: 100%;
+  bottom: -10px;
+  left: 0;
+}
+.heading::before {
+  content: "who i am";
+  position: absolute;
+  color: crimson;
+  background-color: white;
+  bottom: -23px;
+  padding: 5px 10px;
+  font-size: 20px;
+  left: 38px;
+  z-index: 2;
+}
+.detail span {
+  color: crimson;
+}
+
+.detail h2 {
+  margin-bottom: 16px;
+}
+
+.detail p {
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+}
+
+.btn {
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  color: white;
+  background-color: crimson;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: white;
+  color: crimson;
+  border-color: crimson;
+}
+
+/* media query for about section */
+@media (max-width: 768px) {
+  .img-conn {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+  .semi-container {
+    flex-basis: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .detail {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+  }
+  .container {
+    justify-content: center;
+    margin: 20px;
+  }
+  .heading {
+    position: absolute;
+    top: 50px;
+    left: 42%;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: monospace;
+  }
+  .heading::before {
+    content: "who i am";
+    position: absolute;
+    color: crimson;
+    background-color: white;
+    bottom: -20px;
+    padding: 5px 10px;
+    font-size: 10px;
+    left: 12px;
+    z-index: 2;
+  }
+  .detail {
+    text-align: center;
+    width: 80%;
+  }
+  .detail h2 {
+    font-size: 20px;
+  }
+  .detail p {
+    font-size: 13px;
+    line-height: 1.3;
+    max-width: 80%;
+    text-align: center;
+    margin: 10px auto;
+  }
+  .btn {
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+}
+
+#service {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.card-con {
+  background-color: rgb(31, 28, 28);
+  overflow: hidden;
+  padding: 50px 20px;
+  border-radius: 10px;
+  flex-basis: 33.3%;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s;
+}
+.card .icon i {
+  font-size: 40px;
+  color: crimson;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+.card h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: white;
+}
+.dummy-text {
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
+
+.card-con:hover .icon i {
+  color: white;
+}
+.card-con:hover {
+  background-color: crimson;
+}
+.card-con:hover .card {
+  transform: scale(1.1);
+}
+#service .heading {
+  color: white;
+  left: 40%;
+}
+#service .heading::after {
+  background-color: white;
+}
+#service .heading::before {
+  background-color: black;
+  left: 58px;
+}
+.container {
+  position: relative;
+}
+/* media query for services section */
+@media (max-width: 768px) {
+  .card-con {
+    padding: 20px 10px;
+    flex-basis: 40%;
+    margin-bottom: 10px;
+  }
+  .card .icon i {
+    font-size: 20px;
+  }
+  .card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  .dummy-text {
+    text-align: center;
+    font-size: 10px;
+    color: white;
+    width: 80%;
+  }
+  .container {
+    width: 90%;
+    flex-wrap: wrap;
+  }
+  #service .heading::before {
+    background-color: black;
+    left: 30px;
+  }
+}
+
+#skills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#skills .container .heading {
+  top: -10px;
+  left: 45%;
+}
+#skills .container .heading::before {
+  content: "what i know";
+  left: 30px;
+  bottom: -30px;
+}
+#skills .container .heading::after {
+  bottom: -17px;
+}
+#skills h3 {
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Lato", sans-serif;
+  margin-bottom: 10px;
+}
+
+#skills p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+#skills .left {
+  flex-basis: 45%;
+}
+
+#skills .right {
+  flex-basis: 45%;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.progress {
+  width: 100%;
+  background-color: #ccc;
+  height: 5px;
+  display: inline-block;
+  position: relative;
+}
+
+.progress-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  height: 5px;
+  background-color: crimson;
+}
+/* media query for my skills section  */
+@media (max-width: 768px) {
+  #skills .left {
+    flex-basis: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  #skills .right {
+    flex-basis: 100%;
+    margin-bottom: 4rem;
+  }
+  #skills .container .heading::before {
+    content: "what i know";
+    left: 10px;
+    bottom: -25px;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding-bottom: 30px !important;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden !important;
+}
+.div {
+  overflow: hidden;
+  z-index: 3;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#team {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#team .container {
+  position: relative;
+  overflow-y: visible;
+  height: min-content;
+}
+#team .heading {
+  color: white;
+  top: -20px;
+  left: 40%;
+}
+
+#team .heading::after {
+  background-color: white;
+  bottom: -17px;
+}
+#team .heading::before {
+  background-color: black;
+  left: 25px;
+  bottom: -33px;
+}
+
+.cardd {
+  width: 320px;
+  height: 300px;
+  background-color: rgba(43, 38, 38, 0.781);
+  border-radius: 10px;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  user-select: none;
+  overflow: hidden;
+}
+
+.img-con {
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid crimson;
+  margin-bottom: 5px;
+  transition: 0.3s;
+}
+.img-name {
+  color: white;
+
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+.job {
+  color: white;
+}
+.swiper-con {
+  display: flex !important;
+}
+.swiper-pagination {
+  bottom: -1px !important;
+}
+.swiper-wrapper {
+  position: relative !important;
+}
+.swiper-pagination-bullet {
+  background-color: crimson !important;
+}
+
+.cardd:hover {
+  background-color: crimson;
+}
+.cardd:hover .img-con {
+  border-color: white;
+}
+.swiper-card {
+  overflow: hidden !important;
+}
+.cardd:hover .b {
+  transform: scale(1.1);
+}
+.b {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.3s;
+}
+@media (max-width: 768px) {
+  #team .heading::before {
+    background-color: black;
+    left: 8px;
+    bottom: -28px;
+  }
+  #team .heading {
+    color: white;
+    top: -20px;
+    left: 45%;
+  }
+}
+
+.contact-left {
+  flex-basis: 45%;
+}
+.contact-right {
+  flex-basis: 45%;
+}
+.contact-left h2 {
+  font-size: 25px;
+  margin-bottom: 1rem;
+}
+.contact-left .contact-heading {
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: "Lato", sans-serif;
+  margin-bottom: 1.4rem;
+}
+.contact {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.contact-icon i {
+  color: crimson;
+  margin-right: 30px;
+  font-size: 30px;
+}
+.title {
+  font-size: 20px;
+  font-weight: 700;
+}
+.name-details {
+  font-size: 18px;
+  opacity: 0.8;
+}
+.contact-right h2 {
+  font-size: 25px;
+  margin-bottom: 1rem;
+}
+.input-name {
+  display: flex;
+  justify-content: space-between;
+}
+.input-name input {
+  width: 50%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  height: 45px;
+  margin-bottom: 1.1rem;
+  margin-right: 8px;
+  border-radius: 6px;
+  padding: 20px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: #ccc;
+  font-size: 18px;
+}
+textarea {
+  resize: none;
+  width: 100%;
+  height: 100px;
+  border-radius: 6px;
+  padding: 20px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: #ccc;
+  font-size: 18px;
+}
+form .btn {
+  width: fit-content;
+  margin-top: 1rem;
+}
+#contact {
+  display: flex;
+  align-items: center;
+}
+
+#contact h2 {
+  left: 40%;
+  top: -20px;
+}
+
+#contact .heading::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 3px;
+  width: 100%;
+  bottom: -10px;
+  left: 0;
+}
+#contact .heading::before {
+  content: "get in touch";
+  position: absolute;
+  color: crimson;
+  background-color: white;
+  bottom: -23px;
+  padding: 5px 10px;
+  font-size: 20px;
+  left: 35px;
+  z-index: 2;
+}
+/* media query for contact section  */
+
+@media (max-width: 768px) {
+  #contact .heading::before {
+    content: "get in touch";
+    position: absolute;
+    color: crimson;
+    background-color: white;
+    bottom: -20px;
+    padding: 5px 10px;
+    font-size: 10px;
+    left: 13px;
+    z-index: 2;
+  }
+  #contact h2 {
+    top: 0;
+  }
+  .contact-left {
+    flex-basis: 100%;
+    margin-bottom: 2rem;
+  }
+  .contact-right {
+    flex-basis: 100%;
+  }
+}
+
+footer {
+  background-color: rgb(20, 19, 19);
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer p {
+  color: white;
+  font-size: 20px;
+}
+
+.footer a {
+  color: crimson;
+}
+@media (max-width: 768px) {
+  .footer p {
+    color: white;
+    font-size: 15px;
+  }
+}
